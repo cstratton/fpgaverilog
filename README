@@ -1,0 +1,3 @@
+Experimental verilog code for custom hand made xc3s100e/xc3s250e FPGA board
+
+Uses a Makefile to build with ISE 11.1 outside of the IDE

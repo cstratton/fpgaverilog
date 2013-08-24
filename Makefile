@@ -61,7 +61,8 @@ $(TOP).syr: $(NEEDS) $(SRCS)
 
 $(TOP).ngd:	$(TOP).syr $(NEEDS)
 #	$(XILBIN)/ngdbuild -ise $(XISE) -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-vq100-4 $(PROJDIR)/$(TOP).ngc $(PROJDIR)/$(TOP).ngd 
-	$(XILBIN)/ngdbuild -ise $(ISE) -intstyle ise -dd _ngo -nt timestamp -i -p xc3s100e-vq100-4 $(TOP).ngc $(TOP).ngd 
+#drop -i for ignore the ucf cause we sure don't want to ignore it!
+	$(XILBIN)/ngdbuild -ise $(ISE) -intstyle ise -dd _ngo -nt timestamp -p xc3s100e-vq100-4 $(TOP).ngc $(TOP).ngd -uc $(UCF)
 
 $(TOP).ngc: $(TOP).ngd
 
